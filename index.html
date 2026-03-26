@@ -352,11 +352,16 @@
       position: relative;
     }
 
-    .carousel-slide img {
+    .carousel-slide img,
+    .carousel-slide video {
       width: 100%;
       aspect-ratio: 4/3;
       object-fit: cover;
       display: block;
+    }
+
+    .carousel-slide video {
+      background: #000;
     }
 
     .carousel-btn {
@@ -416,6 +421,64 @@
     .carousel[data-count="1"] .carousel-btn,
     .carousel[data-count="1"] .carousel-dots {
       display: none;
+    }
+
+    /* ── OUTRAS PRODUÇÕES ────────────────── */
+    .outros {
+      padding: var(--section) 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .outros-heading {
+      font-family: var(--f-serif);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 500;
+      margin-bottom: 36px;
+    }
+
+    .outros-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .outro-card {
+      background: var(--bg-card);
+      overflow: hidden;
+      transition: background .2s;
+    }
+
+    .outro-card:hover { background: var(--tag-bg); }
+
+    .outro-img {
+      width: 100%;
+      aspect-ratio: 440/296;
+      object-fit: cover;
+      display: block;
+    }
+
+    .outro-body { padding: 20px 20px 24px; }
+
+    .outro-client {
+      font-family: var(--f-serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .outro-segment {
+      font-size: 12px;
+      color: var(--accent);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .outro-services {
+      font-size: 12px;
+      color: var(--mid);
+      line-height: 1.5;
     }
 
     /* ── SOBRE ───────────────────────────── */
@@ -660,6 +723,10 @@
       .project-inner.rev .project-visual {
         order: unset;
       }
+
+      .outros-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 600px) {
@@ -680,6 +747,7 @@
     @media (max-width: 480px) {
       .hero-actions { flex-direction: column; }
       .btn-primary, .btn-outline { justify-content: center; }
+      .outros-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -761,13 +829,18 @@
         </div>
 
         <div class="project-visual">
-          <div class="carousel" data-count="5">
+          <div class="carousel" data-count="10">
             <div class="carousel-track">
-              <div class="carousel-slide"><img src="img/rd-feed.png" alt="Feed Instagram Renata Dias Atelier"></div>
-              <div class="carousel-slide"><img src="img/rd-essence.png" alt="Coleção Essence — Renata Dias"></div>
-              <div class="carousel-slide"><img src="img/rd-essence-card.png" alt="Card Coleção Essence"></div>
-              <div class="carousel-slide"><img src="img/rd-essence-story.png" alt="Story Coleção Essence"></div>
-              <div class="carousel-slide"><img src="img/rd-instagram.jpg" alt="Instagram Renata Dias Atelier"></div>
+              <div class="carousel-slide"><video src="img/rd-video-1.mp4" muted playsinline preload="metadata"></video></div>
+              <div class="carousel-slide"><img src="img/rd-costura.png" alt="Bastidores — Máquina de costura no ateliê"></div>
+              <div class="carousel-slide"><img src="img/rd-manequim.png" alt="Manequim com laço — Renata Dias Atelier"></div>
+              <div class="carousel-slide"><img src="img/rd-noiva-prova.png" alt="Prova de vestido de noiva"></div>
+              <div class="carousel-slide"><img src="img/rd-atelier-bastidor.png" alt="Bastidores do ateliê"></div>
+              <div class="carousel-slide"><img src="img/rd-post-historia.png" alt="Post Instagram — História da RD"></div>
+              <div class="carousel-slide"><img src="img/rd-post-espaco.png" alt="Post Instagram — Novo espaço RD"></div>
+              <div class="carousel-slide"><img src="img/rd-post-essence.png" alt="Post Instagram — Coleção Essence"></div>
+              <div class="carousel-slide"><video src="img/rd-video-espaco.mp4" muted playsinline preload="metadata"></video></div>
+              <div class="carousel-slide"><video src="img/rd-video-essence.mp4" muted playsinline preload="metadata"></video></div>
             </div>
             <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
             <button class="carousel-btn next" aria-label="Próximo">&#8250;</button>
@@ -802,9 +875,19 @@
         </div>
 
         <div class="project-visual">
-          <div class="carousel" data-count="1">
+          <div class="carousel" data-count="11">
             <div class="carousel-track">
-              <div class="carousel-slide"><img src="img/dimensional-feed.png" alt="Feed Instagram Dimensional Construções"></div>
+              <div class="carousel-slide"><video src="img/dm-video-1.mp4" muted playsinline preload="metadata"></video></div>
+              <div class="carousel-slide"><img src="img/dm-vivere-tendencias.png" alt="Vivere Praia Concept — Tendências em arquitetura"></div>
+              <div class="carousel-slide"><img src="img/dm-vivere-nautica.png" alt="Vivere — Guardeira Náutica"></div>
+              <div class="carousel-slide"><img src="img/dm-screenshot-75.png" alt="HIT Cabo Branco — Decoração"></div>
+              <div class="carousel-slide"><img src="img/dm-logo-sunset.png" alt="Dimensional Construções — Identidade"></div>
+              <div class="carousel-slide"><img src="img/dm-historia-dimensional.png" alt="Dimensional — Sua história pode começar"></div>
+              <div class="carousel-slide"><img src="img/dm-screenshot-72.png" alt="Dimensional — Campanha emocional"></div>
+              <div class="carousel-slide"><img src="img/dm-oneway.png" alt="One Way — Edifício"></div>
+              <div class="carousel-slide"><img src="img/dm-screenshot-78.png" alt="MOVE — Closet"></div>
+              <div class="carousel-slide"><img src="img/dm-equipe.png" alt="Equipe Dimensional"></div>
+              <div class="carousel-slide"><img src="img/dm-vivere-obra.png" alt="Vivere — Acompanhamento de obra"></div>
             </div>
             <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
             <button class="carousel-btn next" aria-label="Próximo">&#8250;</button>
@@ -839,9 +922,10 @@
         </div>
 
         <div class="project-visual">
-          <div class="carousel" data-count="1">
+          <div class="carousel" data-count="2">
             <div class="carousel-track">
-              <div class="carousel-slide"><img src="img/ebook-gabriel.png" alt="Ebook Gabriel Petelinkar — Tendências de Produtos Alimentícios Artesanais"></div>
+              <div class="carousel-slide"><img src="img/gp-capa.jpeg" alt="Capa — Como Criar, Vender e Escalar Alimentos Artesanais"></div>
+              <div class="carousel-slide"><img src="img/gp-pagina.jpg" alt="Página interna — Estrutura do guia"></div>
             </div>
             <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
             <button class="carousel-btn next" aria-label="Próximo">&#8250;</button>
@@ -876,9 +960,10 @@
         </div>
 
         <div class="project-visual">
-          <div class="carousel" data-count="1">
+          <div class="carousel" data-count="2">
             <div class="carousel-track">
-              <div class="carousel-slide"><img src="img/amas-site.jpg" alt="Site Instituto AMAS — Mãos Amigas"></div>
+              <div class="carousel-slide"><img src="img/amas-home.jpeg" alt="Site AMAS — Página inicial"></div>
+              <div class="carousel-slide"><img src="img/amas-sobre.jpeg" alt="Site AMAS — Nossa História"></div>
             </div>
             <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
             <button class="carousel-btn next" aria-label="Próximo">&#8250;</button>
@@ -916,9 +1001,9 @@
         <div class="project-visual">
           <div class="carousel" data-count="3">
             <div class="carousel-track">
-              <div class="carousel-slide"><img src="img/lumos-moodboard.png" alt="Moodboard Lumos Decor"></div>
-              <div class="carousel-slide"><img src="img/lumos-objetivo.png" alt="Objetivo Lumos Decor"></div>
-              <div class="carousel-slide"><img src="img/lumos-stories.png" alt="Stories Lumos Decor"></div>
+              <div class="carousel-slide"><img src="img/lumos-mood-1.png" alt="Moodboard Lumos Decor — Referências de design"></div>
+              <div class="carousel-slide"><img src="img/lumos-mood-2.png" alt="Moodboard Lumos Decor — Paleta e lifestyle"></div>
+              <div class="carousel-slide"><img src="img/lumos-mood-3.png" alt="Moodboard Lumos Decor — Curadoria de peças"></div>
             </div>
             <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
             <button class="carousel-btn next" aria-label="Próximo">&#8250;</button>
@@ -930,6 +1015,72 @@
     </div>
   </article>
 
+  <!-- OUTRAS PRODUÇÕES -->
+  <section class="outros">
+    <div class="container">
+      <p class="section-label">Mais trabalhos</p>
+      <h2 class="outros-heading">Outras produções</h2>
+
+      <div class="outros-grid">
+
+        <div class="outro-card">
+          <img src="img/outros-davus.png" alt="Davus Engenharia" class="outro-img">
+          <div class="outro-body">
+            <p class="outro-client">Davus Engenharia</p>
+            <p class="outro-segment">Engenharia e Incorporações</p>
+            <p class="outro-services">Gestão de Redes Sociais · Redação · E-mails Marketing · Landing Pages · Site · Book de Empreendimento</p>
+          </div>
+        </div>
+
+        <div class="outro-card">
+          <img src="img/outros-pipa.png" alt="Reserva da Pipa" class="outro-img">
+          <div class="outro-body">
+            <p class="outro-client">Reserva da Pipa</p>
+            <p class="outro-segment">Condomínio fechado</p>
+            <p class="outro-services">Gestão de Redes Sociais · Redação · E-mails Marketing · Landing Pages · E-Books Culturais</p>
+          </div>
+        </div>
+
+        <div class="outro-card">
+          <img src="img/outros-bauten.png" alt="Bauten" class="outro-img">
+          <div class="outro-body">
+            <p class="outro-client">Bauten</p>
+            <p class="outro-segment">Desenvolvimento Imobiliário</p>
+            <p class="outro-services">Redação Site Institucional · Book de Empreendimento</p>
+          </div>
+        </div>
+
+        <div class="outro-card">
+          <img src="img/outros-pedro-coelho.png" alt="Pedro Coelho" class="outro-img">
+          <div class="outro-body">
+            <p class="outro-client">Pedro Coelho</p>
+            <p class="outro-segment">Defensor Público Federal, Professor</p>
+            <p class="outro-services">Produção de Conteúdo para Redes Sociais · E-mail Funil de Vendas · Landing Pages</p>
+          </div>
+        </div>
+
+        <div class="outro-card">
+          <img src="img/outros-arao.png" alt="Arão e Elzi Salgado" class="outro-img">
+          <div class="outro-body">
+            <p class="outro-client">Arão e Elzi Salgado</p>
+            <p class="outro-segment">Autores independentes</p>
+            <p class="outro-services">Edição de Texto · Revisão · Padronização Editorial</p>
+          </div>
+        </div>
+
+        <div class="outro-card">
+          <img src="img/outros-revista-nassau.png" alt="Revista Nassau" class="outro-img">
+          <div class="outro-body">
+            <p class="outro-client">Revista Nassau</p>
+            <p class="outro-segment">Revista digital</p>
+            <p class="outro-services">Produção de Artigos Público-Alvo para Geração Z</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- SOBRE MIM -->
   <section class="sobre" id="sobre">
     <div class="container">
@@ -939,13 +1090,13 @@
           <p class="section-label">Sobre mim</p>
           <h2 class="sobre-heading">Comunicação de verdade<br>não tem <em>fórmula</em></h2>
           <p class="sobre-text">
-            Tem escuta, sensibilidade e intenção.
+            Comunicação de verdade não tem fórmula — tem escuta, sensibilidade e intenção.
           </p>
           <p class="sobre-text">
             Com foco em redação estratégica e identidade de marca, atuo desde 2017 em segmentos como moda, construção civil, saúde, educação, política, fé, finanças, ONGs e autores independentes. Cada marca um novo universo, um novo jeito de se expressar.
           </p>
           <p class="sobre-text">
-            Se comunicar é tornar comum e, em um mundo repleto de mensagens, canais e, principalmente, ruídos, encontrar o espaço, a voz e a frequência certa é o que transforma barulho em impacto real.
+            Comunicar é tornar comum e, em um mundo repleto de mensagens, canais e, principalmente, ruídos, encontrar o espaço, a voz e a frequência certa é o que transforma barulho em impacto real.
           </p>
           <p class="sobre-text">
             Porque no fim, toda marca é uma história. E toda história merece ser bem contada.
@@ -1053,11 +1204,19 @@
       });
 
       function goTo(index) {
+        // Pause previous video if any
+        const prevVideo = slides[current].querySelector('video');
+        if (prevVideo) { prevVideo.pause(); }
+
         current = (index + count) % count;
         track.style.transform = 'translateX(-' + (current * 100) + '%)';
         dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
           d.classList.toggle('active', i === current);
         });
+
+        // Auto-play current video if any
+        const curVideo = slides[current].querySelector('video');
+        if (curVideo) { curVideo.currentTime = 0; curVideo.play(); }
       }
 
       prevBtn.addEventListener('click', () => goTo(current - 1));
