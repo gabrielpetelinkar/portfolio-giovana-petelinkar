@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Giovana Petelinkar — Portfólio</title>
-  <meta name="description" content="Portfólio de Giovana Petelinkar — Produtora de Conteúdo e Estrategista Digital com 7 anos de experiência.">
+  <meta name="description" content="Portfólio de Giovana Petelinkar — Redatora, Estrategista de Conteúdo e Especialista em Posicionamento de Marca com mais de 9 anos de experiência.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -166,7 +166,7 @@
     .hero-desc {
       font-size: 15px;
       color: var(--mid);
-      max-width: 440px;
+      max-width: 480px;
       line-height: 1.75;
       margin-bottom: 40px;
     }
@@ -245,80 +245,6 @@
       font-size: 11px;
       color: var(--mid);
       letter-spacing: .05em;
-    }
-
-    /* ── SOBRE ───────────────────────────── */
-    .sobre {
-      padding: var(--section) 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .sobre-grid {
-      display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: clamp(40px, 6vw, 100px);
-      align-items: start;
-    }
-
-    .sobre-heading {
-      font-family: var(--f-serif);
-      font-size: clamp(32px, 4vw, 52px);
-      font-weight: 500;
-      line-height: 1.1;
-      color: var(--dark);
-      margin-bottom: 24px;
-    }
-
-    .sobre-heading em {
-      font-style: italic;
-      color: var(--accent);
-    }
-
-    .sobre-text {
-      font-size: 15px;
-      color: var(--mid);
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-
-    .sobre-skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 28px;
-    }
-
-    .sobre-photo-wrap { position: relative; }
-
-    .sobre-photo {
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      object-position: top center;
-      border-radius: 2px;
-    }
-
-    .sobre-badge {
-      position: absolute;
-      top: 20px;
-      left: -20px;
-      background: var(--accent);
-      color: var(--white);
-      padding: 14px 18px;
-      border-radius: 2px;
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 1.4;
-      text-align: center;
-      box-shadow: 0 6px 20px rgba(168,137,108,.35);
-    }
-
-    .sobre-badge strong {
-      display: block;
-      font-family: var(--f-serif);
-      font-size: 26px;
-      font-weight: 600;
-      line-height: 1;
     }
 
     /* ── PROJETOS ────────────────────────── */
@@ -408,100 +334,163 @@
 
     .project-desc + .project-desc { margin-top: 12px; }
 
-    /* Image grid variants */
-    .img-single img {
-      border-radius: 2px;
-      object-fit: cover;
-    }
-
-    .img-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-
-    .img-grid-2 img {
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      border-radius: 2px;
-    }
-
-    .img-grid-mosaic {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 8px;
-    }
-
-    .img-grid-mosaic .span2 {
-      grid-column: 1 / -1;
-    }
-
-    .img-grid-mosaic img {
-      border-radius: 2px;
-      object-fit: cover;
-      width: 100%;
-    }
-
-    .img-grid-mosaic .span2 img { aspect-ratio: 16/8; }
-    .img-grid-mosaic .img-cell img { aspect-ratio: 1/1; }
-
-    /* ── OUTROS PROJETOS ─────────────────── */
-    .outros {
-      padding: var(--section) 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .outros-heading {
-      font-family: var(--f-serif);
-      font-size: clamp(28px, 4vw, 48px);
-      font-weight: 500;
-      margin-bottom: 36px;
-    }
-
-    .outros-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-    }
-
-    .outro-card {
-      background: var(--bg-card);
+    /* ── CAROUSEL / GALLERY ─────────────── */
+    .carousel {
+      position: relative;
       overflow: hidden;
-      transition: background .2s;
+      border-radius: 2px;
+      background: var(--bg-card);
     }
 
-    .outro-card:hover { background: var(--tag-bg); }
+    .carousel-track {
+      display: flex;
+      transition: transform .4s cubic-bezier(.4, 0, .2, 1);
+    }
 
-    .outro-img {
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .carousel-slide img {
       width: 100%;
-      aspect-ratio: 3/2;
+      aspect-ratio: 4/3;
       object-fit: cover;
       display: block;
     }
 
-    .outro-body { padding: 20px 20px 24px; }
-
-    .outro-client {
-      font-family: var(--f-serif);
-      font-size: 20px;
-      font-weight: 500;
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.85);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 14px;
       color: var(--dark);
-      margin-bottom: 4px;
-      line-height: 1.2;
+      transition: background .2s, box-shadow .2s;
+      z-index: 5;
+      box-shadow: 0 2px 8px rgba(0,0,0,.1);
+      backdrop-filter: blur(4px);
     }
 
-    .outro-segment {
-      font-size: 12px;
-      color: var(--accent);
+    .carousel-btn:hover {
+      background: var(--white);
+      box-shadow: 0 4px 16px rgba(0,0,0,.15);
+    }
+
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+
+    .carousel-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 5;
+    }
+
+    .carousel-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.5);
+      border: 1px solid rgba(0,0,0,.15);
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+
+    .carousel-dot.active {
+      background: var(--white);
+      transform: scale(1.2);
+    }
+
+    /* Single image — no controls */
+    .carousel[data-count="1"] .carousel-btn,
+    .carousel[data-count="1"] .carousel-dots {
+      display: none;
+    }
+
+    /* ── SOBRE ───────────────────────────── */
+    .sobre {
+      padding: var(--section) 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: clamp(40px, 6vw, 100px);
+      align-items: start;
+    }
+
+    .sobre-heading {
+      font-family: var(--f-serif);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 500;
+      line-height: 1.1;
+      color: var(--dark);
+      margin-bottom: 24px;
+    }
+
+    .sobre-heading em {
       font-style: italic;
-      margin-bottom: 10px;
+      color: var(--accent);
     }
 
-    .outro-services {
-      font-size: 12px;
+    .sobre-text {
+      font-size: 15px;
       color: var(--mid);
-      line-height: 1.5;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .sobre-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px;
+      margin-bottom: 28px;
+    }
+
+    .sobre-photo-wrap { position: relative; }
+
+    .sobre-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 2px;
+    }
+
+    .sobre-badge {
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      background: var(--accent);
+      color: var(--white);
+      padding: 14px 18px;
+      border-radius: 2px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.4;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(168,137,108,.35);
+    }
+
+    .sobre-badge strong {
+      display: block;
+      font-family: var(--f-serif);
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1;
     }
 
     /* ── CONTATO ─────────────────────────── */
@@ -671,30 +660,11 @@
       .project-inner.rev .project-visual {
         order: unset;
       }
-
-      .outros-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
 
     @media (max-width: 600px) {
       .nav-links { display: none; }
       .hero-name { font-size: 38px; }
-
-      .img-grid-2,
-      .img-grid-mosaic {
-        grid-template-columns: 1fr;
-      }
-
-      .img-grid-mosaic .span2,
-      .img-grid-mosaic .img-cell {
-        grid-column: unset;
-      }
-
-      .img-grid-mosaic .span2 img,
-      .img-grid-mosaic .img-cell img {
-        aspect-ratio: 4/3;
-      }
 
       .projetos-header-inner {
         flex-direction: column;
@@ -708,7 +678,6 @@
     }
 
     @media (max-width: 480px) {
-      .outros-grid { grid-template-columns: 1fr; }
       .hero-actions { flex-direction: column; }
       .btn-primary, .btn-outline { justify-content: center; }
     }
@@ -721,8 +690,8 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo">Giovana Petelinkar</a>
       <ul class="nav-links">
-        <li><a href="#sobre">Sobre</a></li>
         <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
         <li><a href="#contato" class="nav-cta">Contato</a></li>
       </ul>
     </div>
@@ -734,11 +703,11 @@
       <div class="hero-grid">
 
         <div class="hero-content">
-          <p class="hero-eyebrow">Portfólio Profissional · 2025</p>
+          <p class="hero-eyebrow">Portfólio Profissional</p>
           <h1 class="hero-name">Giovana<br>Petelinkar</h1>
-          <p class="hero-title">Produtora de Conteúdo<br>&amp; Estrategista Digital</p>
+          <p class="hero-title">Uma boa história<br>muda <em>tudo.</em></p>
           <p class="hero-desc">
-            Sete anos construindo comunicação que vai além do post bonito — estratégia, narrativa e identidade de marca para empresas que querem ser lembradas pelas razões certas.
+            Mais do que juntar palavras, crio para traduzir pensamentos, sentimentos e ideias; transformando identidade em marca, estratégia em impacto, conceito em conexão.
           </p>
           <div class="hero-actions">
             <a href="#projetos" class="btn-primary">Ver projetos</a>
@@ -749,46 +718,9 @@
         <div class="hero-image">
           <img src="img/giovana-hero.jpg" alt="Giovana Petelinkar" class="hero-photo">
           <div class="hero-badge">
-            <strong>7+</strong>
+            <strong>9+</strong>
             <span>anos de experiência</span>
           </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE -->
-  <section class="sobre" id="sobre">
-    <div class="container">
-      <div class="sobre-grid">
-
-        <div>
-          <p class="section-label">Sobre mim</p>
-          <h2 class="sobre-heading">Conteúdo sem estratégia<br>é só <em>ruído</em></h2>
-          <p class="sobre-text">
-            Comecei na comunicação por amor às histórias. Fiquei pelos resultados. Ao longo de 7 anos, trabalhei com marcas de moda, construção civil, imóveis de luxo, arquitetura, ONGs e autores independentes — aprendendo que cada setor pede uma voz diferente.
-          </p>
-          <p class="sobre-text">
-            Meu trabalho conecta gestão de redes sociais, redação estratégica e identidade de marca. Não separo criação de estratégia: um post bem escrito que não conversa com o posicionamento da marca é desperdício de tempo e verba.
-          </p>
-          <div class="sobre-skills">
-            <span class="tag">Gestão de Redes Sociais</span>
-            <span class="tag">Redação Estratégica</span>
-            <span class="tag">Copywriting</span>
-            <span class="tag">Identidade de Marca</span>
-            <span class="tag">E-mail Marketing</span>
-            <span class="tag">Direcionamento de Conteúdo</span>
-            <span class="tag">Edição e Revisão</span>
-          </div>
-        </div>
-
-        <div class="sobre-photo-wrap">
-          <div class="sobre-badge">
-            <strong>10+</strong>
-            clientes<br>atendidos
-          </div>
-          <img src="img/giovana-sobre.jpg" alt="Giovana Petelinkar" class="sobre-photo">
         </div>
 
       </div>
@@ -800,7 +732,7 @@
     <div class="container">
       <div class="projetos-header-inner">
         <h2 class="projetos-heading">Projetos</h2>
-        <p class="projetos-sub">Seleção de trabalhos · 2022–2025</p>
+        <p class="projetos-sub">Seleção de trabalhos · 2017–2026</p>
       </div>
     </div>
   </section>
@@ -813,15 +745,15 @@
         <div class="project-meta">
           <p class="project-num">01</p>
           <h3 class="project-client">Renata Dias<br>Atelier</h3>
-          <p class="project-segment">Moda feminina</p>
+          <p class="project-segment">Ateliê sob medida</p>
           <div class="project-tags">
-            <span class="tag">Gestão de Redes</span>
-            <span class="tag">Produção de Conteúdo</span>
-            <span class="tag">Identidade Visual</span>
             <span class="tag">Copywriting</span>
+            <span class="tag">Gestão de Mídias Sociais</span>
+            <span class="tag">Produção de Conteúdo</span>
+            <span class="tag">Posicionamento de Marca</span>
           </div>
           <p class="project-desc">
-            Ateliê de moda feminina com identidade refinada. Atuei como Assessora de Marketing e Mídias — planejamento e gerenciamento das redes sociais, captação de vídeos e fotos, criação de legendas e direcionamento visual.
+            Ateliê de vestidos de noiva e festa sob medida. Atuei como Assessora de Marketing e Mídias — planejamento, criação e gerenciamento das redes sociais, captação de vídeos e fotos, direcionamento visual, produção de eventos e relacionamento com influencers.
           </p>
           <p class="project-desc">
             Destaque para a <strong>Coleção Essence</strong>: projeto editorial completo com conceito, produção de conteúdo e identidade visual da coleção.
@@ -829,16 +761,17 @@
         </div>
 
         <div class="project-visual">
-          <div class="img-grid-mosaic">
-            <div class="span2">
-              <img src="img/rd-feed.png" alt="Feed Instagram Renata Dias Atelier">
+          <div class="carousel" data-count="5">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="img/rd-feed.png" alt="Feed Instagram Renata Dias Atelier"></div>
+              <div class="carousel-slide"><img src="img/rd-essence.png" alt="Coleção Essence — Renata Dias"></div>
+              <div class="carousel-slide"><img src="img/rd-essence-card.png" alt="Card Coleção Essence"></div>
+              <div class="carousel-slide"><img src="img/rd-essence-story.png" alt="Story Coleção Essence"></div>
+              <div class="carousel-slide"><img src="img/rd-instagram.jpg" alt="Instagram Renata Dias Atelier"></div>
             </div>
-            <div class="img-cell">
-              <img src="img/rd-essence.png" alt="Coleção Essence — Renata Dias">
-            </div>
-            <div class="img-cell">
-              <img src="img/rd-essence-card.png" alt="Card Coleção Essence">
-            </div>
+            <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
+            <button class="carousel-btn next" aria-label="Próximo">&#8250;</button>
+            <div class="carousel-dots"></div>
           </div>
         </div>
 
@@ -854,24 +787,28 @@
         <div class="project-meta">
           <p class="project-num">02</p>
           <h3 class="project-client">Dimensional<br>Construções</h3>
-          <p class="project-segment">Construção civil · 45 anos de mercado</p>
+          <p class="project-segment">Construtora e incorporadora</p>
           <div class="project-tags">
-            <span class="tag">Gestão de Redes</span>
-            <span class="tag">Redação</span>
-            <span class="tag">E-mail Marketing</span>
-            <span class="tag">Landing Pages</span>
+            <span class="tag">Copywriting</span>
+            <span class="tag">Produção de Conteúdo</span>
+            <span class="tag">Gestão de Mídias Sociais</span>
           </div>
           <p class="project-desc">
-            Construtora com 45 anos de história e múltiplas marcas no portfólio: HIT, One Way, Vivere e MOVE. O desafio era manter consistência de comunicação entre marcas distintas sem apagar as particularidades de cada uma.
+            Construtora com quase 50 anos de história e múltiplos empreendimentos no portfólio. O desafio: manter consistência de comunicação entre marcas distintas sem apagar as particularidades de cada uma — unindo tudo à identidade da própria construtora.
           </p>
           <p class="project-desc">
-            Gestão completa das redes sociais, direcionamento de design, redação de legendas, e-mails, landing pages e site para todas as marcas do grupo.
+            Gestão completa das redes sociais, direcionamento de design, redação de cards e legendas, roteirização de vídeos, e-mail marketing, banners, panfletos, book de empreendimento, landing pages e site.
           </p>
         </div>
 
         <div class="project-visual">
-          <div class="img-single">
-            <img src="img/dimensional-feed.png" alt="Feed Instagram Dimensional Construções" style="border-radius:2px;">
+          <div class="carousel" data-count="1">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="img/dimensional-feed.png" alt="Feed Instagram Dimensional Construções"></div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
+            <button class="carousel-btn next" aria-label="Próximo">&#8250;</button>
+            <div class="carousel-dots"></div>
           </div>
         </div>
 
@@ -879,31 +816,36 @@
     </div>
   </article>
 
-  <!-- PROJECT 03 — Leão Imobiliária -->
+  <!-- PROJECT 03 — Gabriel Petelinkar -->
   <article class="project">
     <div class="container">
       <div class="project-inner">
 
         <div class="project-meta">
           <p class="project-num">03</p>
-          <h3 class="project-client">Leão Inteligência<br>Imobiliária</h3>
-          <p class="project-segment">Mercado imobiliário</p>
+          <h3 class="project-client">Gabriel<br>Petelinkar</h3>
+          <p class="project-segment">Produtos Alimentícios Artesanais</p>
           <div class="project-tags">
-            <span class="tag">Gestão de Redes</span>
-            <span class="tag">Copywriting</span>
-            <span class="tag">Slow Content</span>
+            <span class="tag">Edição de Texto</span>
+            <span class="tag">Revisão</span>
+            <span class="tag">Estrutura Editorial</span>
           </div>
           <p class="project-desc">
-            Comunicação com foco em slow content: a premissa era que qualidade supera frequência. Menos publicações, mais consistência e profundidade no posicionamento.
+            Engenheiro agrônomo especialista em agronegócio, liderança e gestão de pessoas — empreendedor que há 12 anos atua no setor de produtos artesanais e desejava compartilhar seu conhecimento em um guia informativo e prático para produtores artesanais.
           </p>
           <p class="project-desc">
-            Gestão de redes, direcionamento de design e redação estratégica de legendas e e-mails para um público de decisores do mercado imobiliário.
+            O trabalho envolveu aprimoramento de texto com foco em estrutura e qualidade, correção ortográfica e gramatical, coesão narrativa e padronização de fontes e informações.
           </p>
         </div>
 
         <div class="project-visual">
-          <div class="img-single">
-            <img src="img/leao-feed.png" alt="Feed Instagram Leão Inteligência Imobiliária" style="border-radius:2px;">
+          <div class="carousel" data-count="1">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="img/ebook-gabriel.png" alt="Ebook Gabriel Petelinkar — Tendências de Produtos Alimentícios Artesanais"></div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
+            <button class="carousel-btn next" aria-label="Próximo">&#8250;</button>
+            <div class="carousel-dots"></div>
           </div>
         </div>
 
@@ -911,22 +853,60 @@
     </div>
   </article>
 
-  <!-- PROJECT 04 — Lumos Decor -->
+  <!-- PROJECT 04 — AMAS -->
   <article class="project">
     <div class="container">
       <div class="project-inner rev">
 
         <div class="project-meta">
           <p class="project-num">04</p>
+          <h3 class="project-client">AMAS</h3>
+          <p class="project-segment">ONG · Assistência Social</p>
+          <div class="project-tags">
+            <span class="tag">Redação</span>
+            <span class="tag">Design</span>
+            <span class="tag">Programação</span>
+          </div>
+          <p class="project-desc">
+            Instituto sem fins lucrativos com missão educacional, assistencial e beneficente voltada a pessoas em situação de vulnerabilidade. O objetivo era dar dignidade digital à instituição e tornar suas ações conhecidas, construindo prova social e credibilidade.
+          </p>
+          <p class="project-desc">
+            O trabalho envolveu redação, design e programação do site institucional — criando uma presença online que traduz o propósito da organização com clareza e respeito.
+          </p>
+        </div>
+
+        <div class="project-visual">
+          <div class="carousel" data-count="1">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="img/amas-site.jpg" alt="Site Instituto AMAS — Mãos Amigas"></div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
+            <button class="carousel-btn next" aria-label="Próximo">&#8250;</button>
+            <div class="carousel-dots"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- PROJECT 05 — Lumos Decor -->
+  <article class="project">
+    <div class="container">
+      <div class="project-inner">
+
+        <div class="project-meta">
+          <p class="project-num">05</p>
           <h3 class="project-client">Lumos Decor</h3>
-          <p class="project-segment">Arquitetura e decoração</p>
+          <p class="project-segment">Loja de Decoração</p>
           <div class="project-tags">
             <span class="tag">Planejamento</span>
             <span class="tag">Identidade de Marca</span>
-            <span class="tag">Criação de Conteúdo</span>
+            <span class="tag">Estratégia de Conteúdo</span>
+            <span class="tag">Marketing de Experiência</span>
           </div>
           <p class="project-desc">
-            Loja de arquitetura e decoração em desenvolvimento que precisava construir sua identidade de comunicação antes do lançamento — conectando estética, tendências e a experiência de marca a uma estratégia coesa nas redes.
+            Loja de arquitetura e decoração em desenvolvimento que precisava construir sua identidade de comunicação antes do lançamento — conectando estética, tendências e experiência de marca a uma estratégia coesa online e offline.
           </p>
           <p class="project-desc">
             O resultado foi um planejamento que posiciona a Lumos como referência em design e lifestyle: qualidade, exclusividade e curadoria com personalidade.
@@ -934,9 +914,15 @@
         </div>
 
         <div class="project-visual">
-          <div class="img-grid-2">
-            <img src="img/lumos-moodboard.png" alt="Moodboard Lumos Decor">
-            <img src="img/lumos-stories.png" alt="Stories Lumos Decor">
+          <div class="carousel" data-count="3">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="img/lumos-moodboard.png" alt="Moodboard Lumos Decor"></div>
+              <div class="carousel-slide"><img src="img/lumos-objetivo.png" alt="Objetivo Lumos Decor"></div>
+              <div class="carousel-slide"><img src="img/lumos-stories.png" alt="Stories Lumos Decor"></div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
+            <button class="carousel-btn next" aria-label="Próximo">&#8250;</button>
+            <div class="carousel-dots"></div>
           </div>
         </div>
 
@@ -944,98 +930,42 @@
     </div>
   </article>
 
-  <!-- PROJECT 05 — Instituto AMAS -->
-  <article class="project">
+  <!-- SOBRE MIM -->
+  <section class="sobre" id="sobre">
     <div class="container">
-      <div class="project-inner">
+      <div class="sobre-grid">
 
-        <div class="project-meta">
-          <p class="project-num">05</p>
-          <h3 class="project-client">Instituto AMAS<br><span style="font-size:.75em;font-weight:400;color:var(--mid)">Mãos Amigas</span></h3>
-          <p class="project-segment">ONG · Assistência social</p>
-          <div class="project-tags">
-            <span class="tag">Design Web</span>
-            <span class="tag">Programação</span>
-            <span class="tag">Redação Institucional</span>
-          </div>
-          <p class="project-desc">
-            ONG sem fins lucrativos com missão educacional, assistencial e beneficente voltada a pessoas em vulnerabilidade. O objetivo era dar dignidade digital à instituição e tornar sua missão compreensível ao público online.
+        <div>
+          <p class="section-label">Sobre mim</p>
+          <h2 class="sobre-heading">Comunicação de verdade<br>não tem <em>fórmula</em></h2>
+          <p class="sobre-text">
+            Tem escuta, sensibilidade e intenção.
           </p>
-          <p class="project-desc">
-            O trabalho envolveu design, programação e suporte de redação para o site institucional — criando uma presença que traduz o propósito da organização com clareza e credibilidade.
+          <p class="sobre-text">
+            Com foco em redação estratégica e identidade de marca, atuo desde 2017 em segmentos como moda, construção civil, saúde, educação, política, fé, finanças, ONGs e autores independentes. Cada marca um novo universo, um novo jeito de se expressar.
           </p>
-        </div>
-
-        <div class="project-visual">
-          <div class="img-single">
-            <img src="img/amas-site.jpg" alt="Site Instituto AMAS — Mãos Amigas" style="border-radius:2px;">
+          <p class="sobre-text">
+            Se comunicar é tornar comum e, em um mundo repleto de mensagens, canais e, principalmente, ruídos, encontrar o espaço, a voz e a frequência certa é o que transforma barulho em impacto real.
+          </p>
+          <p class="sobre-text">
+            Porque no fim, toda marca é uma história. E toda história merece ser bem contada.
+          </p>
+          <div class="sobre-categories">
+            <span class="tag">Redator Digital</span>
+            <span class="tag">Roteirista de Conteúdo</span>
+            <span class="tag">Estrategista de Conteúdo</span>
+            <span class="tag">Gestor de Redes Sociais</span>
+            <span class="tag">Especialista em Posicionamento</span>
+            <span class="tag">Planejador de Marca</span>
           </div>
         </div>
 
-      </div>
-    </div>
-  </article>
-
-  <!-- OUTROS PROJETOS -->
-  <section class="outros">
-    <div class="container">
-      <p class="section-label">Mais trabalhos</p>
-      <h2 class="outros-heading">Outros projetos</h2>
-
-      <div class="outros-grid">
-
-        <div class="outro-card">
-          <img src="img/davus-feed.png" alt="Davus Engenharia" class="outro-img">
-          <div class="outro-body">
-            <p class="outro-client">Davus Engenharia</p>
-            <p class="outro-segment">Engenharia e Incorporações</p>
-            <p class="outro-services">Gestão de Redes · Redação · E-mails · Landing Pages · Site</p>
+        <div class="sobre-photo-wrap">
+          <div class="sobre-badge">
+            <strong>20+</strong>
+            clientes<br>atendidos
           </div>
-        </div>
-
-        <div class="outro-card">
-          <img src="img/pipa-feed.png" alt="Reserva da Pipa" class="outro-img">
-          <div class="outro-body">
-            <p class="outro-client">Reserva da Pipa</p>
-            <p class="outro-segment">Condomínio · Tibau do Sul, RN</p>
-            <p class="outro-services">Gestão de Redes · Redação · Copywriting · Landing Pages</p>
-          </div>
-        </div>
-
-        <div class="outro-card">
-          <img src="img/bauten-conceito.png" alt="Bauten" class="outro-img">
-          <div class="outro-body">
-            <p class="outro-client">Bauten</p>
-            <p class="outro-segment">Empreendimentos de Luxo</p>
-            <p class="outro-services">Copywriting · Redação para E-mails e Site</p>
-          </div>
-        </div>
-
-        <div class="outro-card">
-          <img src="img/livros-montagem.jpg" alt="Arão e Elzi Salgado" class="outro-img">
-          <div class="outro-body">
-            <p class="outro-client">Arão e Elzi Salgado</p>
-            <p class="outro-segment">Autores · 4 Livros Publicados</p>
-            <p class="outro-services">Edição de Texto · Revisão · Padronização Editorial</p>
-          </div>
-        </div>
-
-        <div class="outro-card">
-          <img src="img/ebook-gabriel.png" alt="Ebook Gabriel Petelinkar" class="outro-img">
-          <div class="outro-body">
-            <p class="outro-client">Gabriel Petelinkar</p>
-            <p class="outro-segment">Ebook · Produtos Alimentícios Artesanais</p>
-            <p class="outro-services">Edição de Texto · Revisão · Estrutura Editorial</p>
-          </div>
-        </div>
-
-        <div class="outro-card">
-          <img src="img/mentora-artigo.png" alt="Direcionamento de Conteúdo" class="outro-img">
-          <div class="outro-body">
-            <p class="outro-client">Direcionamento de Conteúdo</p>
-            <p class="outro-segment">Mentora Digital · Coach Autora</p>
-            <p class="outro-services">Roteiro de Reels · Planejamento · Legendas</p>
-          </div>
+          <img src="img/giovana-sobre.jpg" alt="Giovana Petelinkar" class="sobre-photo">
         </div>
 
       </div>
@@ -1056,21 +986,21 @@
 
           <div class="contato-links">
             <a href="mailto:gipetelinkar@gmail.com" class="contato-link">
-              <div class="c-icon">✉</div>
+              <div class="c-icon">&#9993;</div>
               <div class="c-info">
                 <strong>gipetelinkar@gmail.com</strong>
                 <span>E-mail</span>
               </div>
             </a>
             <a href="https://wa.me/5583991263458" target="_blank" rel="noopener" class="contato-link">
-              <div class="c-icon">📱</div>
+              <div class="c-icon">&#128241;</div>
               <div class="c-info">
                 <strong>(83) 99126-3458</strong>
                 <span>WhatsApp</span>
               </div>
             </a>
             <a href="https://instagram.com/gipetelinkar" target="_blank" rel="noopener" class="contato-link">
-              <div class="c-icon">◎</div>
+              <div class="c-icon">&#9678;</div>
               <div class="c-info">
                 <strong>@gipetelinkar</strong>
                 <span>Instagram</span>
@@ -1082,7 +1012,7 @@
         <div class="contato-photo-wrap">
           <img src="img/giovana-hero.jpg" alt="Giovana Petelinkar" class="contato-photo">
           <div class="contato-quote">
-            <p>"Cada projeto é uma nova história, e eu adoraria escrever a próxima com você."</p>
+            <p>"Uma boa história muda tudo."</p>
             <cite>— Giovana Petelinkar</cite>
           </div>
         </div>
@@ -1095,11 +1025,63 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <span class="footer-name">Giovana Petelinkar — Produtora de Conteúdo &amp; Estrategista Digital</span>
-        <span class="footer-copy">© 2025</span>
+        <span class="footer-name">Giovana Petelinkar</span>
+        <span class="footer-copy">&copy; 2026</span>
       </div>
     </div>
   </footer>
+
+  <!-- CAROUSEL JS -->
+  <script>
+    document.querySelectorAll('.carousel').forEach(carousel => {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const dotsContainer = carousel.querySelector('.carousel-dots');
+      const prevBtn = carousel.querySelector('.prev');
+      const nextBtn = carousel.querySelector('.next');
+      const count = slides.length;
+      let current = 0;
+
+      // Create dots
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.classList.add('carousel-dot');
+        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      function goTo(index) {
+        current = (index + count) % count;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      prevBtn.addEventListener('click', () => goTo(current - 1));
+      nextBtn.addEventListener('click', () => goTo(current + 1));
+
+      // Touch/swipe support
+      let startX = 0;
+      let isDragging = false;
+
+      carousel.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      }, { passive: true });
+
+      carousel.addEventListener('touchend', e => {
+        if (!isDragging) return;
+        isDragging = false;
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) {
+          diff > 0 ? goTo(current + 1) : goTo(current - 1);
+        }
+      }, { passive: true });
+    });
+  </script>
 
 </body>
 </html>
